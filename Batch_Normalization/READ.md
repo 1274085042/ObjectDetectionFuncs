@@ -13,8 +13,8 @@ $$D_uf=f_x(x,y)cos\theta+f_y(x,y)sin\theta$$
 $$f(x_0+tcos\theta,y_0+tsin\theta)-f(x_0,y_0)=\frac{\partial f}{\partial x}tcos\theta+\frac{\partial f}{\partial y}tsin\theta+o(t)$$
 两边都除以t，得到：  
 $$\frac{f(x_0+tcos\theta,y_0+tsin\theta)-f(x_0,y_0)}{t}=\frac{\partial f}{\partial x}cos\theta+\frac{\partial f}{\partial y}sin\theta+\frac{o(t)}{t}$$  
-$$\because o(t)是t的高阶无穷小$$
-$$\therefore D_uf=\lim_{t\to 0}\frac{f(x_0+tcos\theta,y_0+tsin\theta)-f(x_0,y_0)}{t}=\frac{\partial f}{\partial x}cos\theta+\frac{\partial f}{\partial y}sin\theta$$
+$$因为\quad o(t)是t的高阶无穷小$$
+$$所以\quad D_uf=\lim_{t\to 0}\frac{f(x_0+tcos\theta,y_0+tsin\theta)-f(x_0,y_0)}{t}=\frac{\partial f}{\partial x}cos\theta+\frac{\partial f}{\partial y}sin\theta$$
 $$D_uf=f_x(x,y)cos\theta+f_y(x,y)sin\theta$$
 $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$  
 那么$D_uf=\vec{A}\cdot\vec{u}=|\vec{A}||\vec{u}|cos\alpha$ &nbsp;&nbsp;&nbsp;($\alpha为\vec{A}和\vec{u}之间的夹角$)   
@@ -22,5 +22,5 @@ $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$
 现在已经找到函数值变化最快的方向了，这个方向就是和$\vec{A}$向量相同的方向.那么此时我把$\vec{A}$向量命名为梯度（当一个点确定后，梯度方向是确定的）。  
   
   注：为什么求函数增量时要加o(t)  
-  ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%A2%9E%E9%87%8F.gif) 
+  ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%A2%9E%E9%87%8F.gif)  
   由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。
