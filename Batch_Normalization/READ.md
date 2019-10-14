@@ -24,3 +24,15 @@ $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$
   注：为什么求函数增量时要加o(t)  
   ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%A2%9E%E9%87%8F.gif)  
   由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。
+# BN
+## Feature Scaling
+![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/picture2.png)
+假设$x_1$和$x_2$的数值差距很大，如图(a)  
+$x_1$的值为1,2,3等  
+$x_2$的值为100,200,300等  
+$w_1$前面乘的值比较小，所以loss对$w_1$的偏导比较小  
+$w_2$前面乘的值比较大，所以loss对$w_2$的偏导比较大   
+  
+把$w_1$,$w_2$对loss的值影响做图（等值线），在$w_1$方向上的变化率比较小，在$w_2$方向上的变化率比较大。  
+这会使training变得困难，因为要在不同方向上给不同的learing rate。  
+而在图(b)中，$x_1$和$x_2$的数值差距不大时，我们只需要一个learning rate就可以。
