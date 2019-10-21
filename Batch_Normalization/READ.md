@@ -35,4 +35,9 @@ $w_2$前面乘的值比较大，所以loss对$w_2$的偏导比较大
   
 把$w_1$,$w_2$对loss的值的影响做图（等值线），在$w_1$方向上的变化率比较小，在$w_2$方向上的变化率比较大。  
 这会使training变得困难，因为要在不同方向上给不同的learing rate。  
-而在图(b)中，$x_1$和$x_2$的数值差距不大时，我们只需要一个learning rate就可以。
+而在图(b)中，$x_1$和$x_2$的数值差距不大时，我们只需要一个learning rate就可以。  
+因此把不同的feature做normalization，让error等值线接近图(b).  
+![]()  
+Feature Scaling 做法：
+$$x^r_i\leftarrow\frac{x^r_i-m_i}{\sigma _i}$$
+$x^r_i$：第r个data的第i维特征 &nbsp;&nbsp;&nbsp;$m_i$：
