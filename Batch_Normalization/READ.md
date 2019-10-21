@@ -40,4 +40,4 @@ $w_2$前面乘的值比较大，所以loss对$w_2$的偏导比较大
 ![]()  
 Feature Scaling 做法：
 $$x^r_i\leftarrow\frac{x^r_i-m_i}{\sigma _i}$$
-$x^r_i$：第r个data的第i维特征 &nbsp;&nbsp;&nbsp;$m_i$：
+$x^r_i$：第r个data的第i维特征 &nbsp;$m_i$：
