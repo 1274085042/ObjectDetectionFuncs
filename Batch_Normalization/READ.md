@@ -37,7 +37,19 @@ $w_2$前面乘的值比较大，所以loss对$w_2$的偏导比较大
 这会使training变得困难，因为要在不同方向上给不同的learing rate。  
 而在图(b)中，$x_1$和$x_2$的数值差距不大时，我们只需要一个learning rate就可以。  
 因此把不同的feature做normalization，让error等值线接近图(b).  
-![]()  
+![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Feature%20Scaling.png)  
 Feature Scaling 做法：
 $$x^r_i\leftarrow\frac{x^r_i-m_i}{\sigma _i}$$
-$x^r_i$：第r个data的第i维特征 &nbsp;&nbsp;&nbsp;&nbsp;$m_i$：
+$x^r_i$：第r个data的第i维特征 &nbsp;&nbsp;&nbsp;&nbsp;$m_i$：该维mean&nbsp;&nbsp;&nbsp;&nbsp;$\sigma _i$：该维度的standard deviation
+![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization1.png)  
+input做完Feature Scaling 然后进入Layer1  
+经过Layer1运算后的output在要进入Layer2之前也做Feature Scaling  
+经过Layer2运算后的output在要进入Layer3之前也做Feature Scaling  
+
+## Batch normalization
+![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization2.png)  
+使用GPU加速运算时，假设Batch=3  
+$x^1$,$x^2$,$x^3$代表三个输入样本，把这三个样本排在一起变成一个input matrix X和weight matrix W运算，得到一个output matrix Z。   
+![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization3.png)  
+Normalization可以放在activation function之前，也可以放在activation function之后。通常把Normalization放在activation之前，因为有些activation function像是tanh或是sigmoid会有saturation region，我们不喜欢input 落在saturation region，所以先做normalization把数据变为标准正态分布再丢进activation function（因为标准正态分布在0附近的值很多，所以数据不容易掉进saturation region）。  
+现在做Normalization，计算平均值$\mu$和标准差$\sigma$,$\mu$和$\sigma$都是依赖输入$z^1$,$z^2$和$z^3$，我们希望$\mu$和$\sigma$是代表整个training set上面的情况，因此Batch的size不能太小，否则无法从batch估测整个data的情况。
