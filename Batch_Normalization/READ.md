@@ -65,8 +65,7 @@ Normalization可以放在activation function之前，也可以放在activation f
 反向传播的时候要经过$\mu$和$\sigma$，不要把$\mu$、$\sigma$当成常数。    
   
 注：
-如果有的activation function不希望输入的data均值为0，标准差为1。  
-我们可以加上$\gamma$和$\beta$来调整data的mean和standard deviation，调整完之后在丢进activation function。  
+为了防止输入落入非线性激活函数的线性区域，所以引入两个可学习参数。  
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization7.png)
 $$\hat{Z}=\gamma \times\tilde{Z}+\beta$$  
 $\gamma$和$\beta$为作为network参数，是可以被训练出来的。   
