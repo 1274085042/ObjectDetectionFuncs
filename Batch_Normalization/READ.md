@@ -25,15 +25,12 @@ $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$
   由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。   
  ___
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!--code_chunk_output -->
-- [Bacth Normalization](#bacth-normalization)
-  - [梯度](#%e6%a2%af%e5%ba%a6)
   - [BN](#bn)
     - [Feature Scaling](#feature-scaling)
     - [Batch normalization at training stage](#batch-normalization-at-training-stage)
     - [Batch normalization at testing stage](#batch-normalization-at-testing-stage)
     - [Batch normalization benefit](#batch-normalization-benefit)
-<!-- /code_chunk_output -->
+
 ## BN
 ### Feature Scaling
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/picture2.png)
