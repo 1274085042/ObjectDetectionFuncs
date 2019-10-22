@@ -1,3 +1,4 @@
+
 # Bacth Normalization  
 
 ## 梯度
@@ -23,9 +24,10 @@ $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$
   
   注：为什么求函数增量时要加o(t)  
   ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%A2%9E%E9%87%8F.gif)  
-  由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。  
-  
-    [TOC]   
+  由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。      
+***
+  [TOC]  
+***
 # BN
 ## Feature Scaling
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/picture2.png)
@@ -77,3 +79,5 @@ Testing的时候数据是一个一地进来的，所以没办法计算$\mu$和$\
 3.  参数的initialization对训练影响比较小（假设$W^1$乘以k,那么该层的输出$Z^i\times k$,做normalization的时候,因为$\mu$和$\sigma$都乘以k,所以最后的结果不变），也就是说BN使模型训练对参数的初始化比较不敏感。
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization9.png)  
 4.  防止过拟合（如果在测试的时候，进来一个数据和训练样本差距很大，那么做BN后，会使这个shift变小。）
+    
+  
