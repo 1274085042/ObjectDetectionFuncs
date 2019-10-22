@@ -68,4 +68,10 @@ Testing的时候数据是一个一地进来的，所以没办法计算$\mu$和$\
 解决方法：  
 1. 计算整个training set的$\mu$和$\sigma$，显然如果training set比较大，该方法便行不通。  
 2. $\mu$和$\sigma$是在训练过程中逐步更新的，计算训练过程中$\mu$和$\sigma$的平均值。   
-![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization8.png)
+![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization8.png)  
+## Batch normalization benefit  
+1.  Batch normalization可以缓解internal covariate shift，所以可以使用一个比较大的学习率，从而缩短了训练时间。
+2.  缓解vanishing gradients(因为如果激活函数是sigmoid，那么值很大或者很小的时候，梯度会很小，而batch normalization可以缓解数据落到saturation region)。  
+3.  参数的initialization对训练影响比较小（假设$W^1$乘以k,那么该层的输出$Z^i\times k$,做normalization的时候,因为$\mu$和$\sigma$都乘以k,所以最后的结果不变），也就是说BN使模型训练对参数的初始化比较不敏感。
+![]()  
+4.  防止过拟合（如果在测试的时候，进来一个数据和训练样本差距很大，那么做BN后，会使这个shift变小。）
