@@ -1,6 +1,4 @@
-
 # Bacth Normalization  
-
 ## 梯度
 *方向导数*   
 三维空间中的曲面z=f(x,y)，p($x_0$,$y_0$)为f定义域中的一个点，x轴、y轴两个基向量为$\vec{i}$=(1,0),$\vec{j}$=(0,1)，  
@@ -24,12 +22,11 @@ $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$
   
   注：为什么求函数增量时要加o(t)  
   ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%A2%9E%E9%87%8F.gif)  
-  由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。      
-***
-  [TOC]  
-***
-# BN
-## Feature Scaling
+  由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。
+___  
+  <!-- TOC -->autoauto- [Bacth Normalization](#bacth-normalization)auto    - [梯度](#梯度)auto    - [BN](#bn)auto        - [Feature Scaling](#feature-scaling)auto        - [Batch normalization at training stage](#batch-normalization-at-training-stage)auto        - [Batch normalization at testing stage](#batch-normalization-at-testing-stage)auto        - [Batch normalization benefit](#batch-normalization-benefit)autoauto<!-- /TOC -->  
+## BN
+### Feature Scaling
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/picture2.png)
 假设$x_1$和$x_2$的数值差距很大，如图(a)  
 $x_1$的值为1,2,3等  
@@ -50,7 +47,7 @@ input做完Feature Scaling 然后进入Layer1
 经过Layer1运算后的output在要进入Layer2之前也做Feature Scaling  
 经过Layer2运算后的output在要进入Layer3之前也做Feature Scaling  
 
-## Batch normalization at training stage
+### Batch normalization at training stage
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization2.png)  
 使用GPU加速运算时，假设Batch=3  
 $x^1$,$x^2$,$x^3$代表三个输入样本，把这三个样本排在一起变成一个input matrix X和weight matrix W运算，得到一个output matrix Z。   
@@ -67,13 +64,13 @@ Normalization可以放在activation function之前，也可以放在activation f
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization7.png)
 $$\hat{Z}=\gamma \times\tilde{Z}+\beta$$  
 $\gamma$和$\beta$为作为network参数，是可以被训练出来的。
-## Batch normalization at testing stage
+### Batch normalization at testing stage
 Testing的时候数据是一个一地进来的，所以没办法计算$\mu$和$\sigma$。  
 解决方法：  
 1. 计算整个training set的$\mu$和$\sigma$，显然如果training set比较大，该方法便行不通。  
 2. $\mu$和$\sigma$是在训练过程中逐步更新的，计算训练过程中$\mu$和$\sigma$的平均值。   
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization8.png)  
-## Batch normalization benefit  
+### Batch normalization benefit  
 1.  Batch normalization可以缓解internal covariate shift，所以可以使用一个比较大的学习率，从而缩短了训练时间。
 2.  缓解vanishing gradients(因为如果激活函数是sigmoid，那么值很大或者很小的时候，梯度会很小，而batch normalization可以缓解数据落到saturation region)。  
 3.  参数的initialization对训练影响比较小（假设$W^1$乘以k,那么该层的输出$Z^i\times k$,做normalization的时候,因为$\mu$和$\sigma$都乘以k,所以最后的结果不变），也就是说BN使模型训练对参数的初始化比较不敏感。
