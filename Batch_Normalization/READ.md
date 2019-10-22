@@ -1,4 +1,4 @@
-# Bacth Normalization  
+ # Bacth Normalization  
 ## 梯度
 *方向导数*   
 三维空间中的曲面z=f(x,y)，p($x_0$,$y_0$)为f定义域中的一个点，x轴、y轴两个基向量为$\vec{i}$=(1,0),$\vec{j}$=(0,1)，  
@@ -22,9 +22,18 @@ $\vec{u}=(cos\theta,sin\theta)$,假设$\vec{A}=(f_x(x,y),f_y(x,y))$
   
   注：为什么求函数增量时要加o(t)  
   ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E5%A2%9E%E9%87%8F.gif)  
-  由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。
-___  
-  <!-- TOC -->autoauto- [Bacth Normalization](#bacth-normalization)auto    - [梯度](#梯度)auto    - [BN](#bn)auto        - [Feature Scaling](#feature-scaling)auto        - [Batch normalization at training stage](#batch-normalization-at-training-stage)auto        - [Batch normalization at testing stage](#batch-normalization-at-testing-stage)auto        - [Batch normalization benefit](#batch-normalization-benefit)autoauto<!-- /TOC -->  
+  由动图可以清晰看出，随着Δx变小，Δy与dy之间的误差error也越来越小。并且这个error的减小速度可以看出比Δx变化的要快，这也就是error是Δx的高阶无穷小量的几何意义。   
+ ___
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!--code_chunk_output -->
+- [Bacth Normalization](#bacth-normalization)
+  - [梯度](#%e6%a2%af%e5%ba%a6)
+  - [BN](#bn)
+    - [Feature Scaling](#feature-scaling)
+    - [Batch normalization at training stage](#batch-normalization-at-training-stage)
+    - [Batch normalization at testing stage](#batch-normalization-at-testing-stage)
+    - [Batch normalization benefit](#batch-normalization-benefit)
+<!-- /code_chunk_output -->
 ## BN
 ### Feature Scaling
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/picture2.png)
@@ -46,7 +55,6 @@ $x^r_i$：第r个data的第i维特征 &nbsp;&nbsp;&nbsp;&nbsp;$m_i$：该维mean
 input做完Feature Scaling 然后进入Layer1  
 经过Layer1运算后的output在要进入Layer2之前也做Feature Scaling  
 经过Layer2运算后的output在要进入Layer3之前也做Feature Scaling  
-
 ### Batch normalization at training stage
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization2.png)  
 使用GPU加速运算时，假设Batch=3  
@@ -77,4 +85,6 @@ Testing的时候数据是一个一地进来的，所以没办法计算$\mu$和$\
 ![](https://github.com/1274085042/Object_Detection_Funcs/blob/master/Batch_Normalization/Batch_normalization9.png)  
 4.  防止过拟合（如果在测试的时候，进来一个数据和训练样本差距很大，那么做BN后，会使这个shift变小。）
     
-  
+    
+
+    
