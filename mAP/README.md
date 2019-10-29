@@ -31,11 +31,9 @@ GT5 | BB9 | 0.7 | 0.7
 GT6 | BB10 | 0.8 | 0.9
 GT7 |    |    | 
 GT8 |    |    |        
-
+IOU的的阈值为0.5,只有IOU>0.5的BBox才是正确预测。
 | Bounding Box | IOU>0.5 | 属于狗的概率 |
 | ------------ | ------- | ------------ |
-Bounding Box | IOU>0.5 | 属于狗的概率  
----- | --- | --- | ---  
 BB1 | 1 | 0.9  
 BB2 | 1 | 0.9  
 BB3 | 0 | 0.4  
@@ -94,7 +92,7 @@ COCO对performance进行评价时，IOU阈值的设置是动态的，一般VOC I
 # mAP  
 在COCO中有80类目标，所以mAP就是对每一类目标计算AP后的平均值。
   
-  IOU的的阈值为0.5,只有IOU>0.5的BBox才是正确预测。  
+  
 [//]: # (Image Reference)
 [picture1]: ./example/1.png
 [picture2]: ./example/2.png  
