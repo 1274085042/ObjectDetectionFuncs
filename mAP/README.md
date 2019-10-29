@@ -33,19 +33,20 @@ GT7 |    |    |
 GT8 |    |    |   
 
 IOU的的阈值为0.5,只有IOU>0.5的BBox才是正确预测。       
+  
 
-Bounding Box | IOU>0.5 | 属于狗的概率
----- | --- | --- | ---
-BB1 | 1 | 0.9
-BB2 | 1 | 0.9
-BB3 | 0 | 0.4
-BB4 | 0 | 0.8
-BB5 | 0 | 0.4
-BB6 | 1 | 0.7
-BB7 | 0 | 0.5
-BB8 | 0 | 0.6
-BB9 | 1 | 0.7
-BB10 | 1 | 0.9  
+| Bounding Box | IOU>0.5 | 属于狗的概率
+| ---- | --- | --- | ---
+| BB1 | 1 | 0.9
+| BB2 | 1 | 0.9
+| BB3 | 0 | 0.4
+| BB4 | 0 | 0.8
+| BB5 | 0 | 0.4
+| BB6 | 1 | 0.7
+| BB7 | 0 | 0.5
+| BB8 | 0 | 0.6
+| BB9 | 1 | 0.7
+|BB10 | 1 | 0.9  
 
 求P-R，先根据概率进行排序。   
 
@@ -63,16 +64,16 @@ BB5 | 0 | 0.4
 BB3 | 0 | 0.4    
 
 根据不同rank计算precision和recall。  
-Rank 1: precision=1 recall=1/8=0.125  
-Rank 2: precision=1 recall=2/8=0.25  
-Rank 3: precision=1 recall=3/8=0.375  
-Rank 4: precision=3/4=0.75 recall=3/8=0.375  
-Rank 5: precision=4/5=0.8 recall=4/8=0.5    
-Rank 6: precision=5/6=0.8333 recall=5/8=0.625  
-Rank 7: precision=5/7=0.714 recall=5/8=0.625  
-Rank 8: precision=5/8=0.625 recall=5/8=0.625  
-Rank 9: precision=5/9=0.556 recall=5/8=0.625  
-Rank 10: precision=5/10=0.5 recall=5/8=0.625  
+Rank 1: precision=1 &nbsp;&nbsp;recall=1/8=0.125  
+Rank 2: precision=1 &nbsp;&nbsp;recall=2/8=0.25  
+Rank 3: precision=1 &nbsp;&nbsp;recall=3/8=0.375  
+Rank 4: precision=3/4=0.75 &nbsp;&nbsp;recall=3/8=0.375  
+Rank 5: precision=4/5=0.8 &nbsp;&nbsp;&nbsp;&nbsp;recall=4/8=0.5    
+Rank 6: precision=5/6=0.8333 &nbsp;&nbsp;&nbsp;recall=5/8=0.625  
+Rank 7: precision=5/7=0.714 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recall=5/8=0.625  
+Rank 8: precision=5/8=0.625 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recall=5/8=0.625  
+Rank 9: precision=5/9=0.556 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recall=5/8=0.625  
+Rank 10: precision=5/10=0.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recall=5/8=0.625  
 
 ![][picture4]    
   
