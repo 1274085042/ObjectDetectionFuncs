@@ -15,7 +15,7 @@ $$AP=\sum_n(r_n-r_{n-1})p(n)$$
 
 例：对狗进行检测，假设有8个狗的Ground truth（GT1 ~ GT8）。BBox是模型预测出来的10只狗（BB1 ~ BB10）。    
 在目标检测中，将预测BBox与Ground truth进行IOU计算，如果IOU大于一个阈值（threshold，通常是0.5），则认为该BBox是一个TP，如果小于这个阈值就是一个FP。  
-有些BBox只检测到狗的脚或头或者检测到其它的目标，所以IOU很低（比如，BB3，BB4,BB5,BB7,BB8），然后GT6和GT7没有被检测到（FN=（GT6,GT8））。    
+有些BBox只检测到狗的脚或头或者检测到其它的目标，所以IOU很低（比如：BB3,BB4,BB5,BB7,BB8），然后GT7和GT8没有被检测到（所以GT7,GT8是FN）。    
    
 Ground Truth(狗) | Bounding Box | IOU | 属于狗的概率
 ---- | --- | --- | ---
@@ -33,7 +33,7 @@ GT7 |    |    |
 GT8 |    |    |   
 
 IOU的的阈值为0.5,只有IOU>0.5的BBox才是正确预测。  
- Bounding Box | IOU>0.5 | 属于狗的概率
+| Bounding Box | IOU>0.5 | 属于狗的概率
 ---- | --- | --- | ---
 BB1 | 1 | 0.9
 BB2 | 1 | 0.9
@@ -47,7 +47,7 @@ BB9 | 1 | 0.7
 BB10 | 1 | 0.9  
 
 求P-R，先根据概率进行排序。  
-Bounding Box | IOU>0.5 | 属于狗的概率
+| Bounding Box | IOU>0.5 | 属于狗的概率
 ---- | --- | --- | ---
 BB1 | 1 | 0.9
 BB2 | 1 | 0.9
@@ -58,7 +58,8 @@ BB9 | 1 | 0.7
 BB8 | 0 | 0.6
 BB7 | 0 | 0.5
 BB5 | 0 | 0.4
-BB3 | 0 | 0.4  
+BB3 | 0 | 0.4    
+
 根据不同rank计算precision和recall。  
 Rank 1: precision=1 recall=1/8=0.125  
 Rank 2: precision=1 recall=2/8=0.25  
