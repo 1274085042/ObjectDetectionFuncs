@@ -23,7 +23,7 @@ $\epsilon_i=y_i-\hat{y_i}$
 为了推估$\beta_1$,对Loss做$\beta_1$偏微分等于0    
 ![][picture5]
 
-## multiple regression    
+## Multiple regression    
 假设有n个训练样本，d个自变量和1个因变量。   
 X向量多一个1在向量的最前面，这个部分就是截距。  
 ![][picture6]  
