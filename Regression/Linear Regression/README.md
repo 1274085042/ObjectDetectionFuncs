@@ -33,7 +33,8 @@ $$Y_{(n,1)}=X_{(n,d+1)}\beta_{(d+1,1)}$$
 Loss function 定义为：  
 $$\begin{aligned}
   Loss(\beta)&={(Y-\hat{Y})}^T(Y-\hat{Y})\\
-\end{aligned}$$  
+\end{aligned}$$    
+
 ---
 Simple linear regression 和 Multiple regression 可以用最小二乘法，也可用随机梯度下降(Stochastic gradient descent,SGD)来求解。  
 最小二乘法：$\beta=(X^TX)^{-1}X^TY$  
