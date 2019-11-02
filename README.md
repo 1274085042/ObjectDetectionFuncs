@@ -1,1 +1,1 @@
-BN、IOU、NMS、mAP 代码及原理。
+BN、IOU、NMS、mAP、Regression 代码及原理。
