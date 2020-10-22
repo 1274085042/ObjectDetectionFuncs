@@ -1,1 +1,9 @@
-BN、IOU、NMS、mAP、Regression 代码及原理。
+- BN
+- IOU
+- mAP
+- NMS
+- Own_Data
+    * 将数据集划分成训练集和验证集
+    * 统计数据集中的图片数量和数据集中有什么类别
+    * 统计数据集中类别的数目
+- Regression 
