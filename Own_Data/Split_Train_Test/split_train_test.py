@@ -5,7 +5,7 @@ BASE_DIR="D:\owner_data\Pascal_Vehicle\ImageSets"
 sets={
 "train":0.5,
 "val":0.5,
-#"test":0.1,
+"test":0.1,
 }
 
 if __name__=="__main__":
