@@ -1,8 +1,4 @@
 #coding=utf-8
-# I am not responsible of this code.
-# They made me write it, against my will.
-# 下面的代码，我不负责。因为是他们逼我写的，违背了我的意愿。
-
 from sklearn import svm, datasets
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
@@ -26,7 +22,6 @@ def preprocess_iris_data():
     classifier.fit(X_train, y_train)
     y_score = classifier.decision_function(X_test)
     return y_test, y_score
-
 
 def precision_recall_curve(y_true, y_score):
     # 不同的排序方式，其结果也会有略微差别，
@@ -59,7 +54,6 @@ def precision_recall_curve(y_true, y_score):
         recall = np.array( recall )
     #return np.r_[1, precision[sl]], np.r_[0, recall[sl]], score[sl]
     return  precision,recall,score
-
 
 def average_precision_approximated(y_true, y_predict):
     """

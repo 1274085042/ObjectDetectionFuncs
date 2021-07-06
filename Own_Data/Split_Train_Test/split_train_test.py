@@ -29,6 +29,3 @@ if __name__=="__main__":
         for setname in ("train","val"):
             for line in open(os.path.join(BASE_DIR,"Main",setname+".txt"),'r'):
                 print(line,end="",file=train_val)
-
-
-

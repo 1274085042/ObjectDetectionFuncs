@@ -53,4 +53,3 @@ print("person",person)
 print("tricycle:",tricycle)
 print("motorcycle:",motorcycle)
 print("truck:",truck)
-
